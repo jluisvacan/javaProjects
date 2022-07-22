@@ -1,0 +1,47 @@
+package org.generation.ecommerce.model;
+
+public class ChangePassword {
+	private String usarname;
+	private String passwprd;
+	private String newPassword;
+	
+	public ChangePassword(String usarname, String passwprd, String newPassword) {
+		super();
+		this.usarname = usarname;
+		this.passwprd = passwprd;
+		this.newPassword = newPassword;
+	}//constructor
+	
+	public ChangePassword() {} //constructor por Default
+
+	public String getUsarname() {
+		return usarname;
+	}
+
+	public void setUsarname(String usarname) {
+		this.usarname = usarname;
+	}
+
+	public String getPasswprd() {
+		return passwprd;
+	}
+
+	public void setPasswprd(String passwprd) {
+		this.passwprd = passwprd;
+	}
+
+	public String getNewPassword() {
+		return newPassword;
+	}
+
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
+	}
+
+	@Override
+	public String toString() {
+		return "ChangePassword [usarname=" + usarname + ", passwprd=" + passwprd + ", newPassword=" + newPassword + "]";
+	}
+	
+	
+}//classChangePassword

@@ -1,0 +1,17 @@
+import java.util.HashSet;
+
+public class HashSetDemo {
+
+	public static void main(String[] args) {
+		HashSet<String> cars = new HashSet<String>();
+		System.out.println(cars.add("Volvo"));
+		System.out.println(cars.add("BMW"));
+		System.out.println(cars.add("VW"));
+		System.out.println(cars.add("Ford"));
+		System.out.println(cars.add("Audi"));
+		System.out.println(cars.add("BMW"));
+
+		System.out.println(cars.size());
+		System.out.println(cars.toString());
+	}//main
+}//class_HashSetDemo

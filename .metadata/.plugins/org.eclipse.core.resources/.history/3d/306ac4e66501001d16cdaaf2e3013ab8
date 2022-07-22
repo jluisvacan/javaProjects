@@ -1,0 +1,5 @@
+package org.generation.ecommerce.jwt.config;
+
+public class JwtFilter {
+
+}

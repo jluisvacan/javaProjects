@@ -1,0 +1,10 @@
+package org.generation.ecommerce.controller;
+
+public class ProductoController {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

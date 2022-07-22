@@ -1,0 +1,23 @@
+
+public class Person {
+
+		String name;
+		String email;
+		int age;
+		String rfc;
+		String address;
+		
+		public Person(String name, String email, int age, String rfc, String address) {
+			this.name = name;
+			this.email = email;
+			this.age = age;
+			this.address = address;
+			this.rfc=rfc;
+		}//constructor
+
+		@Override
+		public String toString() {
+			return "Person [name=" + name + ", email=" + email + ", age=" + age + ", rfc=" + rfc + ", address="
+					+ address + "]";
+		}//toString
+}//class

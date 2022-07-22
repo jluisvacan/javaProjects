@@ -1,0 +1,28 @@
+package org.generation.ecommerce.service;
+
+import java.util.List;
+
+import org.generation.ecommerce.model.Producto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+
+@Service
+public class ProductoService {
+	private final ProductoRepository productoRepository;
+	
+	@Autowired
+	public ProductoService(ProductoRepository productoRepository) {
+		this.productoRepository = productoRepository;
+	}//constructor
+	
+	public List<Producto> getProductos() {
+		return productoRepository.findAll();
+	}//getProductos
+	
+	public Producto getProducto(Long id) {
+		return productoRepository.findAll();
+	}//getProducto
+	
+}//class ProductoService

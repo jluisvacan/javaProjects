@@ -1,0 +1,37 @@
+package com.maderacnc.MaderaCNC.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.maderacnc.MaderaCNC.models.Categoria;
+
+@Service
+public class CategoriaServices {
+	private final CategoriaRepository categoriaRepository;
+
+
+	
+	
+	public CategoriaServices(CategoriaRepository categoriaRepository) {
+		super();
+		this.categoriaRepository = categoriaRepository;
+	}//constructor
+
+	public List<Categoria> getCategories () {
+		return categoriaRepository.findAll();
+	} // getCategories
+
+	public Categoria getCategory (Long id) {
+		Categoria tmpCategory = null;
+		for (Categoria category : category_list) {
+			if (category.getCategory_id() == id) {
+				tmpCategory = category;
+				break;
+			} // if
+		} // foreach
+		return tmpCategory;
+	} // getCategory
+	
+} // class categoriaServices

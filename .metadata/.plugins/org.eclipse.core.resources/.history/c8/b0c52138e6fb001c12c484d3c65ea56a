@@ -1,0 +1,14 @@
+package org.generation.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+// RestController indica que se trata de un controlador, que recibira solicitudes y dara respuestas
+public class FirstController {
+	
+	@GetMapping("/ch13/")
+	public String inicio() {
+		return "CH13 rules!! ";
+	}//inicio
+}//class

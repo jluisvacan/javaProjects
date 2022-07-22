@@ -1,0 +1,5 @@
+package com.maderacnc.MaderaCNC.services;
+
+public class UsuarioRepository {
+
+}

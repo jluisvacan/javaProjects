@@ -1,0 +1,19 @@
+
+public class WhileDemo {
+
+	public static void main(String[] args) {
+		int total = 0, cont = 0;
+		while (cont<=10) {
+			total+=cont;
+			cont+=2;
+		} // while cont
+		System.out.println(total);
+	total = 0;
+	cont = 0;
+	do {
+		total += cont;
+		cont +=2;
+	} while (cont<=20);
+	System.out.println(total);
+	} //main
+} //class WhileDemo

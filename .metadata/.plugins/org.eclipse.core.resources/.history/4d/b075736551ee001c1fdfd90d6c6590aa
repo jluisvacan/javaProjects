@@ -1,0 +1,25 @@
+import java.util.HashMap;
+
+public class HashMapDemo {
+
+	public static void main(String[] args) {
+		HashMap<String, String> colors = new HashMap<String, String>();
+		
+		colors.put("WHITE","#FFFFFF");
+		colors.put("BLACK","#000000");
+		colors.put("BLUE","#0000FF");
+		colors.put("VIOLET","#8A2BE2");
+		colors.put("GREEN","#32CD32");
+		colors.put("PINK","#FF69B4");
+		colors.put("ORANGE","#FFA500");
+		colors.put("BROWN","#8B4513");
+		colors.put("NAVY","#000080");
+		colors.put("NAVY","#000088");
+		
+		System.out.println(colors.size());
+		
+		System.out.println(colors.get("BLUE"));
+		
+		colors.containsKey("NAVY");
+	}// main
+}//class_HashMapDemo

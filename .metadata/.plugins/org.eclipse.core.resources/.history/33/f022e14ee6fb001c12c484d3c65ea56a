@@ -1,0 +1,52 @@
+package org.generation.demo;
+
+public class Producto {
+
+	private String nombre;
+	private String descripcion;
+	private String URL_image;
+	private String precio;
+	
+	public Producto(String nombre, String descripcion, String uRL_image, String precio) {
+		super();
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		URL_image = uRL_image;
+		this.precio = precio;
+	}
+public Producto() {}
+public String getNombre() {
+	return nombre;
+}
+public void setNombre(String nombre) {
+	this.nombre = nombre;
+}
+public String getDescripcion() {
+	return descripcion;
+}
+public void setDescripcion(String descripcion) {
+	this.descripcion = descripcion;
+}
+public String getURL_image() {
+	return URL_image;
+}
+public void setURL_image(String uRL_image) {
+	URL_image = uRL_image;
+}
+public String getPrecio() {
+	return precio;
+}
+public void setPrecio(String precio) {
+	this.precio = precio;
+}
+@Override
+public String toString() {
+	return "Producto [nombre=" + nombre + ", descripcion=" + descripcion + ", URL_image=" + URL_image + ", precio="
+			+ precio + "]";
+}
+	
+	
+
+
+
+}

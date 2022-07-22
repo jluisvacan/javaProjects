@@ -1,0 +1,10 @@
+
+public class testPerson {
+
+	public static void main(String[] args) {
+		Person bren = new Person("Brenda Granados", "bren@gmail.com", 18, "GAPB040101", "Domicilio conocido");
+				
+		System.out.println(bren);
+
+	}//main
+}//class

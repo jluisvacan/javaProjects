@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class WhileLoops {
+
+	public static void main(String[] args) {
+		Scanner console = new Scanner(System.in);
+        int num;
+
+        int total = 0, cont = 0;
+		while (cont<=20) {
+			total+=cont;
+			cont+=1;
+		} // while cont
+		System.out.println(total + "" + cont);
+	}
+
+}

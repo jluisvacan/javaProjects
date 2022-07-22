@@ -1,0 +1,76 @@
+package org.generation.ecommerce.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.generation.ecommerce.model.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UsuarioService {
+	private final UsuarioRepository usuarioRepository;
+	
+	@Autowired
+	public UsuarioService(UsuarioRepository usuarioRepository) {
+		this.usuarioRepository = usuarioRepository;
+	}//constructor
+	
+	public List<Usuario> getUsuarios(){
+		return usuarioRepository.findAll();
+	}//getUsuarios
+	
+	public Usuario getUsuario(Long id){
+		return usuarioRepository.findById(id).orElseThrow(
+				()-> new IllegalStateException("El usuario con el id ["+id+"] no existe."));
+	}//getUsuarios
+	
+	public Usuario deleteUsuario(Long id){
+		Usuario tmpUsuario=null;
+		if(usuarioRepository.existsById(id)) {
+			tmpUsuario =usuarioRepository.findById(id).get();
+			usuarioRepository.deleteById(id);
+			} //if
+		return tmpUsuario;
+	}//deleteUsuarios
+	
+	public Usuario addUsuario(Usuario usuario){
+		Usuario tmpUsuario=null;
+		Optional<Usuario> userByUsername = usuarioRepository.findByUsername(usuario.getUsername());
+		if(userByUsername.isPresent()) {
+			throw new IllegalStateException("El usuario con el nombre["+usuario.getUsername()+"] YA existe.");
+		} else {
+			usuarioRepository.save(usuario);
+			tmpUsuario = usuario;
+		}//if
+		return tmpUsuario;
+	}//addUsuarios
+	
+	public Usuario updateUsuario(Long id, String password, String newPassword){
+		Usuario tmpUsuario=null;
+		if(usuarioRepository.existsById(id)) {
+			tmpUsuario =usuarioRepository.findById(id).get();
+			if(tmpUsuario.getPassword().equals(password)) { //comparando contraseña anterior
+				tmpUsuario.setPassword(newPassword);
+				usuarioRepository.save(tmpUsuario);
+			} else {
+				System.out.println("Error al comparar las contraseñas...");
+			}
+			} //if
+		return tmpUsuario;
+	}//updateUsuarios
+
+	public boolean validateUsuario(Usuario usuario) {
+		boolean res = false;
+		Optional<Usuario> userByUsername = usuarioRepository.findByUsername(usuario.getUsername());
+		if(userByUsername.isPresent()) {
+			Usuario u =userByUsername.get();
+			if (u.getPassword().equals(usuario.getPassword()) ) {
+				res = true;
+			}//if password
+		}//if
+		return res;
+	}//ValidateUsuario
+	
+	
+}//classUsuarioService

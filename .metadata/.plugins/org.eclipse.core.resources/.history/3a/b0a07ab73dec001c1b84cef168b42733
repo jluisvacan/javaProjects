@@ -1,0 +1,32 @@
+package org.generation.utils;
+import java.util.Scanner;
+
+class Class {
+
+    public static void main( String[] args )
+    {
+        Scanner console = new Scanner( System.in );
+        System.out.println( "ingresa tu nombre:  " );
+        System.out.println( "ingresa tu apellido:  " );
+        String name = console.next();
+        String lastName = console.next();
+        
+        printNameCharacters( name, lastName );
+        printNameLength( name, lastName );
+        printNameCharacters(name, lastName);
+        printNameLength(name, lastName);
+       console.close();
+    }
+
+    private static void printNameLength( String name, String lastName )
+    {
+
+        
+    }
+
+    private static void printNameCharacters( String name, String lastName )
+    {
+
+    }
+	
+}
